@@ -1,0 +1,105 @@
+:root {
+  font-family: Inter, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #e2e8f0;
+  background:
+    radial-gradient(circle at top, rgba(124, 58, 237, 0.26), transparent 28%),
+    radial-gradient(circle at 80% 20%, rgba(34, 211, 238, 0.18), transparent 22%),
+    #030712;
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: #e2e8f0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(139, 92, 246, 0.22), transparent 20%),
+    radial-gradient(circle at 85% 10%, rgba(34, 211, 238, 0.18), transparent 24%),
+    linear-gradient(180deg, #020817 0%, #040d1d 35%, #030712 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: drift 18s ease-in-out infinite alternate;
+}
+
+body::before {
+  width: 420px;
+  height: 420px;
+  background: rgba(124, 58, 237, 0.18);
+  top: 12%;
+  left: 8%;
+}
+
+body::after {
+  width: 500px;
+  height: 500px;
+  background: rgba(34, 211, 238, 0.12);
+  right: 8%;
+  bottom: 6%;
+  animation-delay: 1.5s;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(18px, -20px, 0) scale(1.08);
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #7dd3fc;
+  outline-offset: 2px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin-top: 0;
+}
